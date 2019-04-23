@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="600.0" style="-fx-background-color: #263238;" stylesheets="@../DarkTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MissionsPackage.MissionsController">
+   <top>
+      <Label text="Are you ready for battle?" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="219.0" fitWidth="600.0">
+               <image>
+                  <Image url="@../img/missions.jpg" />
+               </image>
+            </ImageView>
+            <HBox prefHeight="71.0" prefWidth="600.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 1" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 2" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 3" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 4" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 5" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 6" />
+               </children>
+            </HBox>
+            <HBox prefHeight="71.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="70.0" prefWidth="100.0" text="M 1" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="M 2" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="M 3" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="M 4" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="M 5" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="M 6" />
+               </children>
+            </HBox>
+            <HBox prefHeight="71.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 1" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 2" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 3" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 4" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 5" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 6" />
+               </children>
+            </HBox>
+            <HBox prefHeight="71.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 1" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 2" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 3" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 4" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 5" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 6" />
+               </children>
+            </HBox>
+            <HBox prefHeight="71.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 1 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 2 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 3 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 4 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 5 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="E 6 B" />
+               </children>
+            </HBox>
+            <HBox prefHeight="71.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="M 1 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="M 2 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="M 3 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="M 4 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="M 5 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="M 6 B" />
+               </children>
+            </HBox>
+            <HBox prefHeight="71.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 1 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 2 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 3 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 4 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 5 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="H 6 B" />
+               </children>
+            </HBox>
+            <HBox prefHeight="71.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 1 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 2 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 3 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 4 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 5 B" />
+                  <Button mnemonicParsing="false" onAction="#startMission" prefHeight="71.0" prefWidth="100.0" text="I 6 B" />
+               </children>
+            </HBox>
+            <HBox prefHeight="71.0" prefWidth="200.0">
+               <children>
+                  <Button onAction="#startSpecialMission" mnemonicParsing="false" prefHeight="71.0" prefWidth="300.0" text="Enemies never happen too much" />
+                  <Button mnemonicParsing="false" prefHeight="71.0" prefWidth="300.0" text="Online Fight" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <Button fx:id="backBtn" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="600.0" styleClass="menuBtn" stylesheets="@../DarkTheme.css" text="Back to main menu">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+   </bottom>
+</BorderPane>

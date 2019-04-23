@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import MissionsPackage.MissionsController ?>
+<?import BattlePackage.BattleController ?>
+
+<BorderPane fx:id="mainPane"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="MissionsPackage.MissionBattleConnector"
+            prefHeight="900.0" prefWidth="600.0"
+            stylesheets="@../DarkTheme.css"
+            style="-fx-background-color: #263238;">
+
+    <children>
+            <fx:include source="Missions.fxml" fx:id="missions"/>
+
+            <fx:include source="../BattlePackage/Battle.fxml" fx:id="battle"/>
+    </children>
+
+</BorderPane>
