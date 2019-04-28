@@ -5,6 +5,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="600.0" style="-fx-background-color: #263238;" stylesheets="@../DarkTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyHeroPackage.MyHeroController">
@@ -21,14 +23,25 @@
             <Font size="20.0" />
          </font></Button>
    </bottom>
-   <left>
-      <Label prefHeight="274.0" prefWidth="174.0" BorderPane.alignment="CENTER">
-         <graphic>
-            <ImageView fitHeight="275.0" fitWidth="176.0">
-               <image>
-                  <Image url="@../img/my_hero_view.jpg" />
-               </image>
-            </ImageView>
-         </graphic></Label>
-   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="64.0" prefWidth="200.0">
+               <children>
+                  <Label>
+                     <graphic>
+                        <ImageView fx:id="weaponImg" fitHeight="64.0" fitWidth="64.0">
+                           <image>
+                              <Image url="@../img/item_null.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label prefHeight="64.0" prefWidth="159.0" text="            Weapon:" />
+                  <Label fx:id="weaponName" prefHeight="64.0" prefWidth="167.0" text="-No-" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>

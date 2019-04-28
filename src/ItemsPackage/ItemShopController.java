@@ -19,7 +19,7 @@ public class ItemShopController {
     BorderPane mainPane;
 
     @FXML
-    public void buyItem(ActionEvent event) {
+    public void buyWeapon(ActionEvent event) {
         Button button = (Button) event.getSource();
         if ((BuyItem.buy("WEAPON", button.getId()))) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

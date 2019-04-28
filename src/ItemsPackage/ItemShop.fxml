@@ -25,17 +25,65 @@
                <children>
                   <ImageView>
                      <image>
+                        <Image url="@../img/weapon_pistol.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="   Pistol                  (Attack: 50; HP: 0)                              Cost: 100$      " />
+                  <Button id="pistol" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy" />
+               </children>
+            </HBox>
+            <Label />
+            <HBox prefHeight="32.0" prefWidth="600.0">
+               <children>
+                  <ImageView>
+                     <image>
+                        <Image url="@../img/weapon_pp.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="   PP                      (Attack: 75; HP: 10)                             Cost: 100$      " />
+                  <Button id="pp" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy" />
+               </children>
+            </HBox>
+            <Label />
+            <HBox prefHeight="32.0" prefWidth="600.0">
+               <children>
+                  <ImageView>
+                     <image>
                         <Image url="@../img/weapon_rifle.png" />
                      </image>
                   </ImageView>
-                  <Label text="   Rifle &quot;Exhaust&quot; (Attack: 100; HP: 100)                                 Cost: 100$      " />
-                  <Button id="Exhaust" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyItem" prefHeight="34.0" prefWidth="77.0" text="Buy" />
+                  <Label text="   Rifle                   (Attack: 100; HP: 20)                            Cost: 100$      " />
+                  <Button id="rifle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy" />
+               </children>
+            </HBox>
+            <Label />
+            <HBox prefHeight="32.0" prefWidth="600.0">
+               <children>
+                  <ImageView>
+                     <image>
+                        <Image url="@../img/weapon_minigun.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="   Minigun                 (Attack: 125; HP: 30)                            Cost: 100$      " />
+                  <Button id="minigun" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy" />
+               </children>
+            </HBox>
+            <Label />
+            <HBox prefHeight="32.0" prefWidth="600.0">
+               <children>
+                  <ImageView>
+                     <image>
+                        <Image url="@../img/weapon_bazuka.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="   Bazuka                  (Attack: 150; HP: 40)                            Cost: 100$      " />
+                  <Button id="bazuka" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy" />
                </children>
             </HBox>
          </children>
       </VBox>
    </center>
    <bottom>
-      <Button onAction="#back" mnemonicParsing="false" prefHeight="34.0" prefWidth="600.0" text="Back to Main Menu" BorderPane.alignment="CENTER" />
+      <Button mnemonicParsing="false" onAction="#back" prefHeight="34.0" prefWidth="600.0" text="Back to Main Menu" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>
