@@ -1,7 +1,7 @@
 package BattlePackage;
 
+import GamePackage.ContextOriginator;
 import GamePackage.Game;
-import GamePackage.GameSingleton;
 
 
 public class GeneralBattle implements Battle {
@@ -27,7 +27,7 @@ public class GeneralBattle implements Battle {
 
 
     public GeneralBattle() {
-        Game game = GameSingleton.getInstance();
+        Game game = ContextOriginator.getCurrentState();
         heroHp = game.getHeroHp();
         heroAttack = game.getHeroAttck();
     }

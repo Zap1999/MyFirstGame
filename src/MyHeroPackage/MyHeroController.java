@@ -1,6 +1,7 @@
 package MyHeroPackage;
 
 import GamePackage.Context;
+import GamePackage.ContextOriginator;
 import GamePackage.Game;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,7 +34,7 @@ public class MyHeroController {
     @FXML
     public void initialize() {
         try {
-            Game game = Context.loadGame();
+            Game game = ContextOriginator.getCurrentState();
             attack.setText(String.valueOf(game.getHeroAttck()));
             hp.setText(String.valueOf(game.getHeroHp()));
             money.setText("10000$");
