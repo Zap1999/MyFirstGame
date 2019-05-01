@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -13,7 +14,7 @@
       <Label text="Wanna buy something?" BorderPane.alignment="CENTER" />
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="243.0" fitWidth="600.0">
                <image>
@@ -21,64 +22,251 @@
                </image>
             </ImageView>
             <Label />
-            <HBox prefHeight="32.0" prefWidth="600.0">
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView>
-                     <image>
-                        <Image url="@../img/weapon_pistol.png" />
-                     </image>
-                  </ImageView>
-                  <Label text="   Pistol                  (Attack: 50; HP: 0)                              Cost: 100$      " />
-                  <Button id="pistol" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy" />
+                  <VBox prefHeight="250.0" prefWidth="64.0">
+                     <children>
+                        <ImageView>
+                           <image>
+                              <Image url="@../img/weapon_pistol.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView>
+                           <image>
+                              <Image url="@../img/weapon_pp.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView>
+                           <image>
+                              <Image url="@../img/weapon_rifle.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView>
+                           <image>
+                              <Image url="@../img/weapon_minigun.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView>
+                           <image>
+                              <Image url="@../img/weapon_bazuka.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Pistol">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="PP">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Rifle">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Minigun">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Bazuka">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="250.0" prefWidth="144.0">
+                     <children>
+                        <Label text="(Attack: 50; HP: 0)">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="(Attack: 75; HP: 10)">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="(Attack: 100; HP: 20)">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="(Attack: 125; HP: 30)">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="(Attack: 150; HP: 40)">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Cost: 100$">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Cost: 200$">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Cost: 300$">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Cost: 400$">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Cost: 500$">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button id="pistol" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy">
+                           <VBox.margin>
+                              <Insets bottom="17.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button id="pp" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy">
+                           <VBox.margin>
+                              <Insets bottom="17.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button id="rifle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy">
+                           <VBox.margin>
+                              <Insets bottom="17.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button id="minigun" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy">
+                           <VBox.margin>
+                              <Insets bottom="17.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button id="bazuka" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy" />
+                     </children>
+                  </VBox>
                </children>
             </HBox>
             <Label />
-            <HBox prefHeight="32.0" prefWidth="600.0">
+            <Label alignment="TOP_CENTER" text="Clothes:">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="TOP_CENTER" prefHeight="32.0" prefWidth="200.0">
                <children>
-                  <ImageView>
-                     <image>
-                        <Image url="@../img/weapon_pp.png" />
-                     </image>
-                  </ImageView>
-                  <Label text="   PP                      (Attack: 75; HP: 10)                             Cost: 100$      " />
-                  <Button id="pp" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy" />
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Boston" />
+                        <ImageView fitHeight="100.0" fitWidth="75.0">
+                           <image>
+                              <Image url="@../img/boston_null.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label text="Attack: 100 " />
+                        <Label text="HP: 50" />
+                        <Label text="Cost: 100$" />
+                        <Button fx:id="boston" onAction="#buyBody" mnemonicParsing="false" text="Buy" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Street" />
+                        <ImageView fitHeight="100.0" fitWidth="75.0">
+                           <image>
+                              <Image url="@../img/street_null.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label text="Attack: 130" />
+                        <Label text="HP: 70" />
+                        <Label text="Cost: 200$" />
+                        <Button fx:id="street" onAction="#buyBody" mnemonicParsing="false" text="Buy" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Bonn" />
+                        <ImageView fitHeight="100.0" fitWidth="75.0">
+                           <image>
+                              <Image url="@../img/bonn_null.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label text="Attack: 160" />
+                        <Label text="HP: 90" />
+                        <Label text="Cost: 300$" />
+                        <Button fx:id="bonn" onAction="#buyBody" mnemonicParsing="false" text="Buy" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Spectr" />
+                        <ImageView fitHeight="100.0" fitWidth="75.0">
+                           <image>
+                              <Image url="@../img/spectr_null.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label text="Attack: 190" />
+                        <Label text="HP: 120" />
+                        <Label text="Cost: 400$" />
+                        <Button fx:id="spectr" onAction="#buyBody" mnemonicParsing="false" text="Buy" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Predator" />
+                        <ImageView fitHeight="100.0" fitWidth="75.0">
+                           <image>
+                              <Image url="@../img/predator_null.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label text="Attack: 500" />
+                        <Label text="HP: 300" />
+                        <Label text="Cost: 500" />
+                        <Button fx:id="predator" onAction="#buyBody" mnemonicParsing="false" text="Buy" />
+                     </children>
+                  </VBox>
                </children>
-            </HBox>
-            <Label />
-            <HBox prefHeight="32.0" prefWidth="600.0">
-               <children>
-                  <ImageView>
-                     <image>
-                        <Image url="@../img/weapon_rifle.png" />
-                     </image>
-                  </ImageView>
-                  <Label text="   Rifle                   (Attack: 100; HP: 20)                            Cost: 100$      " />
-                  <Button id="rifle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy" />
-               </children>
-            </HBox>
-            <Label />
-            <HBox prefHeight="32.0" prefWidth="600.0">
-               <children>
-                  <ImageView>
-                     <image>
-                        <Image url="@../img/weapon_minigun.png" />
-                     </image>
-                  </ImageView>
-                  <Label text="   Minigun                 (Attack: 125; HP: 30)                            Cost: 100$      " />
-                  <Button id="minigun" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy" />
-               </children>
-            </HBox>
-            <Label />
-            <HBox prefHeight="32.0" prefWidth="600.0">
-               <children>
-                  <ImageView>
-                     <image>
-                        <Image url="@../img/weapon_bazuka.png" />
-                     </image>
-                  </ImageView>
-                  <Label text="   Bazuka                  (Attack: 150; HP: 40)                            Cost: 100$      " />
-                  <Button id="bazuka" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buyWeapon" prefHeight="34.0" prefWidth="77.0" text="Buy" />
-               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>

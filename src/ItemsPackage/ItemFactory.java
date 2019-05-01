@@ -8,7 +8,7 @@ public class ItemFactory {
             return new WeaponItem(name);
         }
         else {
-            return new WeaponItem("pistol");
+            return new BodyItem(name);
         }
     }
 

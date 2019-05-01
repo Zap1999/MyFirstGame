@@ -21,7 +21,17 @@ public class ItemShopController {
     @FXML
     public void buyWeapon(ActionEvent event) {
         Button button = (Button) event.getSource();
-        if ((BuyItem.buy("WEAPON", button.getId()))) {
+        buy("WEAPON", button.getId());
+    }
+
+    @FXML
+    public void buyBody(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        buy("BODY", button.getId());
+    }
+
+    private void buy(String type, String name) {
+        if ((BuyItem.buy(type, name))) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("You bought this item.");
             alert.setHeaderText(null);

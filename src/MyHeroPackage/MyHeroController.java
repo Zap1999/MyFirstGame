@@ -19,10 +19,14 @@ public class MyHeroController {
     private BorderPane mainPane;
 
     @FXML
-    private ImageView weaponImg;
+    private ImageView heroView;
 
     @FXML
-    private Label weaponName;
+    private Label attack;
+    @FXML
+    private Label hp;
+    @FXML
+    private Label money;
 
     private Stage stage;
 
@@ -30,12 +34,13 @@ public class MyHeroController {
     public void initialize() {
         try {
             Game game = Context.loadGame();
-            String weapon = game.getWeapon().getName();
-            weaponName.setText(weapon);
-            weaponImg.setImage(new Image("\\img\\weapon_" + weapon + ".png", 64, 64, false, true));
+            attack.setText(String.valueOf(game.getHeroAttck()));
+            hp.setText(String.valueOf(game.getHeroHp()));
+            money.setText("10000$");
+            heroView.setImage(new Image(game.getViewPath(), 300, 400, false, true));
         }
         catch (Exception e) {
-            System.out.println("My hero init failed.");
+            System.err.println("Loading hero view error.");
             e.printStackTrace();
         }
     }
