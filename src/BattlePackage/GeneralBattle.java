@@ -1,10 +1,14 @@
 package BattlePackage;
 
+import EnemyPackage.*;
 import GamePackage.ContextOriginator;
 import GamePackage.Game;
 
 
 public class GeneralBattle implements Battle {
+
+    private EnemyCollection enemies;
+    private Iterator iter;
 
     private char difficulty;
     private int diff;
@@ -34,6 +38,8 @@ public class GeneralBattle implements Battle {
 
     public void init() {
 
+        enemies = new EnemyCollection();
+
         switch (difficulty) {
             case 'E': diff = 1;
             break;
@@ -46,12 +52,23 @@ public class GeneralBattle implements Battle {
             default: diff = 0;
         }
 
-        if (diff!=0) enemy = FactoryProducer.getFactory(boss).getEnemy(diff);
+
+        if (diff!=0) {
+            Enemy e = FactoryProducer.getFactory(boss).getEnemy(diff);
+            for (int i = 0; i < enemyCount; i++) {
+                enemies.add(e);
+                if(((i+1) == enemyCount) && diff != 4)
+                    enemies.add(FactoryProducer.getFactory(boss).getEnemy(diff+1));
+            }
+        }
+
+        iter = enemies.createIterator();
+
         setEnemy();
     }
 
     public void setEnemy() {
-        enemyCount--;
+        enemy = (Enemy) iter.next();
         this.agilCounter = 0;
         this.enemyHp = enemy.getHp();
         this.enemyAttack = enemy.getAttack();
@@ -79,10 +96,11 @@ public class GeneralBattle implements Battle {
     }
 
     public boolean isEnemyDead() {
-        if(enemyHp <= 0 && enemyCount == 0) {
+        if(enemyHp <= 0 && !iter.hasNext()) {
             return true;
         }
-        else if(enemyHp <= 0 && enemyCount > 0) {
+        else if(enemyHp <= 0 && iter.hasNext()) {
+            enemyCount--;
             setEnemy();
             return false;
         }

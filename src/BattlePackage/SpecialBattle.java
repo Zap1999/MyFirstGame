@@ -1,5 +1,8 @@
 package BattlePackage;
 
+import EnemyPackage.Enemy;
+import EnemyPackage.FactoryProducer;
+
 public class SpecialBattle extends BattleDecorator {
 
     SpecialBattle(Battle battle) {

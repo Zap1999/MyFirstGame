@@ -1,5 +1,7 @@
 package BattlePackage;
 
+import EnemyPackage.Enemy;
+
 public abstract class BattleDecorator implements Battle {
 
     protected Battle decoratedBattle;

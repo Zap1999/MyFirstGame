@@ -33,13 +33,13 @@ public class ItemShopController {
     private void buy(String type, String name) {
         if ((BuyItem.buy(type, name))) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("You bought this item.");
+            alert.setContentText("You successfully bought this item.");
             alert.setHeaderText(null);
             alert.show();
         }
         else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("You already have this item.");
+            alert.setContentText("You already own this item.");
             alert.setHeaderText(null);
             alert.show();
         }

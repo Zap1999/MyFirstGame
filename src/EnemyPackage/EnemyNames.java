@@ -1,10 +1,9 @@
-package BattlePackage;
+package EnemyPackage;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public enum EnemyNames {
 

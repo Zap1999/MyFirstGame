@@ -1,4 +1,4 @@
-package BattlePackage;
+package EnemyPackage;
 
 import java.util.HashMap;
 

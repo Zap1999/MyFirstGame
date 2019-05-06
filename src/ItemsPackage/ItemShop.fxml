@@ -257,8 +257,8 @@
                               <Image url="@../img/predator_null.jpg" />
                            </image>
                         </ImageView>
-                        <Label text="Attack: 500" />
-                        <Label text="HP: 300" />
+                        <Label text="Attack: 100000" />
+                        <Label text="HP: 100000" />
                         <Label text="Cost: 500" />
                         <Button fx:id="predator" onAction="#buyBody" mnemonicParsing="false" text="Buy" />
                      </children>

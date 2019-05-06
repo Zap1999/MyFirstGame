@@ -59,9 +59,7 @@ public class BattleController {
     private Label yourStats;
 
     @FXML
-    public void initialize() {
-
-    }
+    public void initialize() {}
 
     @FXML
     public void startBattle() {
@@ -106,6 +104,7 @@ public class BattleController {
                 alert.setHeaderText(null);
                 alert.show();
             }
+
             stage = (Stage) mainPane.getScene().getWindow();
             BorderPane root;
             root = FXMLLoader.load(getClass().getResource("/MenuPackage/MainMenu.fxml"));

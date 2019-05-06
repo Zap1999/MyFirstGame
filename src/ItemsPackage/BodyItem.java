@@ -32,8 +32,8 @@ public class BodyItem implements Item, Serializable {
                 this.attackBonus = 190;
                 break;
             case "predator":
-                this.hpBonus = 300;
-                this.attackBonus = 500;
+                this.hpBonus = 100000;
+                this.attackBonus = 100000;
                 break;
                 default:
                     this.attackBonus = 0;

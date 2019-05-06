@@ -1,5 +1,7 @@
 package BattlePackage;
 
+import EnemyPackage.Enemy;
+
 public interface Battle {
 
     boolean isHeroDead();
