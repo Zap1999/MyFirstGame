@@ -1,6 +1,7 @@
 package StartPackage;
 
 import DB.DBFacade;
+import GamePackage.ContextOriginator;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -53,11 +54,7 @@ public class LoginController {
     }
 
     private void loggedIn() throws IOException {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Logged in successfully!");
-        alert.setTitle("Coolest game ever");
-        alert.setHeaderText(null);
-        alert.show();
-
+        ContextOriginator.getCurrentState().setName(name.getText());
         stage = (Stage) mainPane.getScene().getWindow();
         BorderPane root;
         root = (BorderPane) FXMLLoader.load(getClass().getResource("/MenuPackage/MainMenu.fxml"));

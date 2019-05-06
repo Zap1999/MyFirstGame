@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 public class Game implements Serializable {
 
+    private String name;
     private Hero hero;
     private DollarCurrency money;
 
@@ -34,4 +35,11 @@ public class Game implements Serializable {
 
     public String getViewPath() { return hero.getViewPath(); }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

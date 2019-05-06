@@ -59,4 +59,13 @@ public class MainMenuController implements Initializable {
         stage.setScene(scene);
     }
 
+    @FXML
+    private void toChat() throws IOException {
+        stage = (Stage) mainPane.getScene().getWindow();
+        BorderPane root;
+        root = (BorderPane) FXMLLoader.load(getClass().getResource("/ChatPackage/ChatView.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+
 }

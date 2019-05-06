@@ -23,6 +23,7 @@
                 </font></Button>
                 <Button fx:id="missionsBtn" mnemonicParsing="false" onAction="#toMissions" prefHeight="90.0" prefWidth="604.0" styleClass="menuBtn" stylesheets="@../DarkTheme.css" text="Missions"  />
                 <Button fx:id="shopBtn" mnemonicParsing="false" onAction="#toShop" prefHeight="90.0" prefWidth="604.0" styleClass="menuBtn" stylesheets="@../DarkTheme.css" text="Shop"  />
+                <Button fx:id="chatBtn" mnemonicParsing="false" onAction="#toChat" prefHeight="90.0" prefWidth="604.0" styleClass="menuBtn" stylesheets="@../DarkTheme.css" text="Chat"  />
             </children>
         </VBox>
     </center>
