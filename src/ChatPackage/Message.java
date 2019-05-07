@@ -6,10 +6,12 @@ public class Message implements Serializable {
 
     private String text;
     private String sender;
+    public static int ID = 0;
 
     public Message(String t, String s) {
         text = t;
         sender = s;
+        ID++;
     }
 
     public String getSender() {

@@ -29,17 +29,13 @@ public class ChatViewController {
     @FXML
     public void initialize() {
 
-        try {
-            connection = new ChatServerConnection();
-        }catch (IOException e) {
-            System.err.println("Chat connection failed.");
-            e.printStackTrace();
+        makeConnection("localhost", 7777);
+        MessagesStatus status = new MessagesStatus(connection, this);
+        MessageCollection list = status.getMessageList();
+        MessageCollectionIterator it = (MessageCollectionIterator) list.createIterator();
+        while(it.hasNext()) {
+            addMsg((Message)it.next());
         }
-
-        Message msg = new Message("Hello world!", "You");
-        addMsg(msg);
-        addMsg(new Message("Bye, bastard!", "qwe"));
-        addMsg(new Message("vdshdbfudjksfnsldkfnsdklfndslkfnsdlkfndskflsdf", "Someguy"));
     }
 
     @FXML
@@ -84,10 +80,23 @@ public class ChatViewController {
 
             Message msg = new Message(text, name);
 
-            Sender sender = new Sender(msg);
+
+            MessageOperation operation = new SendOperation(msg);
+            Sender sender = new Sender(operation);
             sender.send(connection.getOutStream());
 
         }
+    }
+
+    private void makeConnection(String host, int port) {
+
+        try {
+            connection = new ChatServerConnection(host, port);
+        }catch (IOException e) {
+            port++;
+            makeConnection(host, port);
+        }
+
     }
 
 }

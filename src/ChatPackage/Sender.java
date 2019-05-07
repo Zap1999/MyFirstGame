@@ -5,9 +5,9 @@ import java.io.ObjectOutputStream;
 
 public class Sender {
 
-    private Message msg;
+    private MessageOperation msg;
 
-    public Sender(Message msg) {
+    public Sender(MessageOperation msg) {
         this.msg = msg;
     }
 
