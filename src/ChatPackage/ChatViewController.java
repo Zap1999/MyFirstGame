@@ -87,6 +87,7 @@ public class ChatViewController {
             MessageOperation operation = new SendOperation(msg);
             Sender sender = new Sender(operation);
             sender.send(connection.getOutStream());
+            // TODO: send do not refreshes
             refresh();
         }
     }
