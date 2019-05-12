@@ -3,7 +3,11 @@ package ChatPackage;
 import EnemyPackage.Collection;
 import EnemyPackage.Iterator;
 
-public class MessageCollection implements Collection {
+import java.io.Serializable;
+
+public class MessageCollection implements Collection, Serializable {
+
+    private static final long serialVersionUID = 6529685098267757690L;
 
     public static final int MAX_ITEMS = 999;
 
@@ -13,12 +17,10 @@ public class MessageCollection implements Collection {
 
     public MessageCollection() {
         msgList = new Message[MAX_ITEMS];
+    }
 
-        // TODO: clear that (just testing)
-        Message msg = new Message("Hello world!", "You");
-        add(msg);
-        add(new Message("Bye, bastard!", "qwe"));
-        add(new Message("vdshdbfudjksfnsldkfnsdklfndslkfnsdlkfndskflsdf", "Someguy"));
+    public int getCount() {
+        return count;
     }
 
     public void add(Message m) throws RuntimeException {
@@ -39,5 +41,9 @@ public class MessageCollection implements Collection {
         return new MessageCollectionIterator(msgList);
     }
 
+    public void clear() {
+        this.msgList = new Message[MAX_ITEMS];
+        this.count = 0;
+    }
 
 }

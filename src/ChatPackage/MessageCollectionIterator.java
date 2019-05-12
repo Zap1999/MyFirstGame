@@ -2,7 +2,9 @@ package ChatPackage;
 
 import EnemyPackage.Iterator;
 
-public class MessageCollectionIterator implements Iterator {
+import java.io.Serializable;
+
+public class MessageCollectionIterator implements Iterator, Serializable {
 
     Message[] msgList;
 

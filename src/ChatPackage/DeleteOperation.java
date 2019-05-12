@@ -14,8 +14,17 @@ public class DeleteOperation implements MessageOperation, Serializable {
     }
 
     @Override
-    public void execute() {
-
+    public MessageCollection execute(MessageCollection c) {
+        MessageCollectionIterator was = (MessageCollectionIterator) c.createIterator();
+        MessageCollection willBe = new MessageCollection();
+        Message msg;
+        while (was.hasNext()) {
+            msg = (Message) was.next();
+            if(!msg.equals(message)) {
+                willBe.add(msg);
+            }
+        }
+        return willBe;
     }
 
     @Override

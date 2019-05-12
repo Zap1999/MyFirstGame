@@ -1,9 +1,11 @@
 package ChatPackage;
 
+import EnemyPackage.Iterator;
 import GamePackage.ContextOriginator;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -14,9 +16,12 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ListIterator;
 
 public class ChatViewController {
+    private static int PORT = 7776;
     private ChatServerConnection connection;
+    private MessagesStatus messagesController;
 
     private Stage stage;
     @FXML
@@ -29,17 +34,15 @@ public class ChatViewController {
     @FXML
     public void initialize() {
 
-        makeConnection("localhost", 7777);
-        MessagesStatus status = new MessagesStatus(connection, this);
-        MessageCollection list = status.getMessageList();
-        MessageCollectionIterator it = (MessageCollectionIterator) list.createIterator();
-        while(it.hasNext()) {
-            addMsg((Message)it.next());
-        }
+        makeConnection("localhost", PORT);
+        PORT++;
+        messagesController = new MessagesStatus(connection, this);
+        refresh();
     }
 
     @FXML
     private void back() throws IOException {
+        connection.close();
         stage = (Stage) mainPane.getScene().getWindow();
         BorderPane root;
         root = (BorderPane) FXMLLoader.load(getClass().getResource("../MenuPackage/MainMenu.fxml"));
@@ -72,7 +75,7 @@ public class ChatViewController {
     }
 
     @FXML
-    private void sendMsg() {
+    private void sendMsg() throws Exception{
         if(!myMsg.getText().trim().equalsIgnoreCase("")) {
 
             String text = myMsg.getText();
@@ -84,7 +87,7 @@ public class ChatViewController {
             MessageOperation operation = new SendOperation(msg);
             Sender sender = new Sender(operation);
             sender.send(connection.getOutStream());
-
+            refresh();
         }
     }
 
@@ -93,10 +96,20 @@ public class ChatViewController {
         try {
             connection = new ChatServerConnection(host, port);
         }catch (IOException e) {
-            port++;
-            makeConnection(host, port);
+            PORT++;
+            makeConnection(host, PORT);
         }
 
+    }
+
+    @FXML
+    private void refresh() {
+        msgsBox.getChildren().clear();
+        MessageCollection list = messagesController.getMessageList();
+        MessageCollectionIterator it = (MessageCollectionIterator) list.createIterator();
+        while(it.hasNext()) {
+            addMsg((Message) it.next());
+        }
     }
 
 }

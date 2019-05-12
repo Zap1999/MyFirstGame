@@ -16,21 +16,21 @@ public class MessagesStatus {
     }
 
     private void getMessages() {
+        messages.clear();
         try {
             ObjectOutputStream out = connection.getOutStream();
             out.writeObject(new UpdateOperation());
             ObjectInputStream in = connection.getInStream();
-            try {
-                MessageCollection msgs = (MessageCollection) in.readObject();
-                MessageCollectionIterator it = (MessageCollectionIterator) msgs.createIterator();
-                while(it.hasNext()) {
-                    messages.add((Message) it.next());
+                try {
+                    MessageCollection msgs = (MessageCollection) in.readObject();
+                    MessageCollectionIterator it = (MessageCollectionIterator) msgs.createIterator();
+                    while (it.hasNext()) {
+                        messages.add((Message) it.next());
+                    }
+                } catch (ClassNotFoundException e) {
+                    System.err.println("Getting message collection from server failure.");
+                    e.printStackTrace();
                 }
-            }
-            catch (ClassNotFoundException e) {
-                System.err.println("Getting message collection from server failure.");
-                e.printStackTrace();
-            }
         }
         catch (IOException e) {
             System.err.println("Creating stream for getting messages failure.");

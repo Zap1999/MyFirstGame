@@ -20,7 +20,8 @@ public class ChatServerConnection {
     public ChatServerConnection(String host, int port) throws IOException {
         client = new Socket(host, port);
         out = new ObjectOutputStream(client.getOutputStream());
-    }
+        in = new ObjectInputStream(client.getInputStream());
+}
 
     public ObjectOutputStream getOutStream() {
         return out;
@@ -28,5 +29,11 @@ public class ChatServerConnection {
 
     public ObjectInputStream getInStream() {
         return in;
+    }
+
+    public void close() throws IOException {
+        out.close();
+        in.close();
+        client.close();
     }
 }

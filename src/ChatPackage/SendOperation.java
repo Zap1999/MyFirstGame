@@ -15,8 +15,9 @@ public class SendOperation implements MessageOperation, Serializable {
     }
 
     @Override
-    public void execute() {
-
+    public MessageCollection execute(MessageCollection c) {
+        c.add(message);
+        return c;
     }
 
     @Override

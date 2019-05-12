@@ -7,8 +7,8 @@ public class UpdateOperation implements MessageOperation, Serializable {
     public final OpType op = OpType.UPDATE;
 
     @Override
-    public void execute() {
-
+    public MessageCollection execute(MessageCollection c) {
+        return c;
     }
 
     @Override
