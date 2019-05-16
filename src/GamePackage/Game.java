@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public class Game implements Serializable {
 
-    private String name;
+    private String name = "admin";
     private Hero hero;
     private DollarCurrency money;
 

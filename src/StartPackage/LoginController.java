@@ -37,10 +37,12 @@ public class LoginController {
         }
 
         DBFacade login = new DBFacade(name.getText(), pass.getText());
-        if(login.logIn())
+        if(login.logIn()) {
             loggedIn();
-        else
+        }
+        else {
             notLoggedIn();
+        }
 
     }
 
@@ -78,6 +80,15 @@ public class LoginController {
 
         else
             root = (BorderPane) FXMLLoader.load(getClass().getResource("/StartPackage/RegisterForm.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    private void test() throws IOException {
+        stage = (Stage) mainPane.getScene().getWindow();
+        BorderPane root;
+        root = (BorderPane) FXMLLoader.load(getClass().getResource("/MenuPackage/MainMenu.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }

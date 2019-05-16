@@ -1,21 +1,22 @@
 package ChatPackage;
 
-import java.io.Serializable;
+import ChatPackage.Message;
 
-import static ChatPackage.OpType.SEND;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 // Command operation (send)
 public class SendOperation implements MessageOperation, Serializable {
 
     private Message message;
-    public final OpType op = SEND;
+    public final OpType op = OpType.SEND;
 
     public SendOperation(Message message) {
         this.message = message;
     }
 
     @Override
-    public MessageCollection execute(MessageCollection c) {
+    public ArrayList execute(ArrayList c) {
         c.add(message);
         return c;
     }

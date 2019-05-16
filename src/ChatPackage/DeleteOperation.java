@@ -1,22 +1,22 @@
 package ChatPackage;
 
 import java.io.Serializable;
-
-import static ChatPackage.OpType.DELETE;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class DeleteOperation implements MessageOperation, Serializable {
 
     private Message message;
-    public final OpType op = DELETE;
+    public final OpType op = OpType.DELETE;
 
     public DeleteOperation(Message message) {
         this.message = message;
     }
 
     @Override
-    public MessageCollection execute(MessageCollection c) {
-        MessageCollectionIterator was = (MessageCollectionIterator) c.createIterator();
-        MessageCollection willBe = new MessageCollection();
+    public ArrayList execute(ArrayList c) {
+        Iterator was = c.iterator();
+        ArrayList willBe = new ArrayList();
         Message msg;
         while (was.hasNext()) {
             msg = (Message) was.next();

@@ -16,8 +16,8 @@ public class GameApp extends Application {
 
         ContextOriginator.loadState(ContextCareTaker.getLast());
 
-        //Parent root = FXMLLoader.load(getClass().getResource("/StartPackage/LogInForm.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("/MenuPackage/MainMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/StartPackage/LogInForm.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("/MenuPackage/MainMenu.fxml"));
         stage.setTitle("Coolest game ever");
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -29,6 +29,5 @@ public class GameApp extends Application {
     public static void main(String[] args) {
         launch(args);
         ContextCareTaker.add(ContextOriginator.saveState());
-        ContextOriginator.getCurrentState().setName("admin");
     }
 }

@@ -21,7 +21,7 @@ public class ChatServerConnection {
         client = new Socket(host, port);
         out = new ObjectOutputStream(client.getOutputStream());
         in = new ObjectInputStream(client.getInputStream());
-}
+    }
 
     public ObjectOutputStream getOutStream() {
         return out;
@@ -31,9 +31,13 @@ public class ChatServerConnection {
         return in;
     }
 
-    public void close() throws IOException {
-        out.close();
-        in.close();
-        client.close();
+    public void close() {
+        try {
+            in.close();
+            out.close();
+            client.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

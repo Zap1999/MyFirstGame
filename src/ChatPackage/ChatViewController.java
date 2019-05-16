@@ -1,11 +1,10 @@
 package ChatPackage;
 
-import EnemyPackage.Iterator;
 import GamePackage.ContextOriginator;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -14,14 +13,12 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.util.ListIterator;
+
 
 public class ChatViewController {
-    private static int PORT = 7776;
+    private static int PORT = 7777;
     private ChatServerConnection connection;
-    private MessagesStatus messagesController;
 
     private Stage stage;
     @FXML
@@ -36,8 +33,17 @@ public class ChatViewController {
 
         makeConnection("localhost", PORT);
         PORT++;
-        messagesController = new MessagesStatus(connection, this);
-        refresh();
+        new MessagesStatus(
+                data->{
+                    Platform.runLater(() -> {
+                        msgsBox.getChildren().clear();
+                        for(Message m : data) {
+                            addMsg(m);
+                        }
+                    }
+                    );
+                },
+                connection, this);
     }
 
     @FXML
@@ -75,21 +81,23 @@ public class ChatViewController {
     }
 
     @FXML
-    private void sendMsg() throws Exception{
-        if(!myMsg.getText().trim().equalsIgnoreCase("")) {
+    private void sendMsg() {
+        String text = myMsg.getText().trim();
+        if (!text.equalsIgnoreCase("") && !isDelereOperation(text)) {
 
-            String text = myMsg.getText();
             String name = ContextOriginator.getCurrentState().getName();
 
             Message msg = new Message(text, name);
 
-
             MessageOperation operation = new SendOperation(msg);
             Sender sender = new Sender(operation);
             sender.send(connection.getOutStream());
-            // TODO: send do not refreshes
-            refresh();
+            myMsg.clear();
+
+        } else if (isDelereOperation(text)) {
+            deleteMsg(text);
         }
+
     }
 
     private void makeConnection(String host, int port) {
@@ -103,13 +111,21 @@ public class ChatViewController {
 
     }
 
-    @FXML
-    private void refresh() {
-        msgsBox.getChildren().clear();
-        MessageCollection list = messagesController.getMessageList();
-        MessageCollectionIterator it = (MessageCollectionIterator) list.createIterator();
-        while(it.hasNext()) {
-            addMsg((Message) it.next());
+    private void deleteMsg(String text) {
+        text = text.replace("/d", "");
+        text = text.trim();
+        Message msg = new Message(text, ContextOriginator.getCurrentState().getName());
+        DeleteOperation o = new DeleteOperation(msg);
+        Sender sender = new Sender(o);
+        sender.send(connection.getOutStream());
+    }
+
+    private boolean isDelereOperation(String text) {
+        String[] splitted = text.split(" ");
+        if (splitted[0].equalsIgnoreCase("/d")) {
+            return true;
+        } else {
+            return false;
         }
     }
 

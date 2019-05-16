@@ -1,13 +1,14 @@
 package ChatPackage;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class UpdateOperation implements MessageOperation, Serializable {
 
     public final OpType op = OpType.UPDATE;
 
     @Override
-    public MessageCollection execute(MessageCollection c) {
+    public ArrayList execute(ArrayList c) {
         return c;
     }
 

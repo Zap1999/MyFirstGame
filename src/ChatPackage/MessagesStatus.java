@@ -1,47 +1,35 @@
 package ChatPackage;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.function.Consumer;
 
 public class MessagesStatus {
-
-    private MessageCollection messages = new MessageCollection();
+    private Consumer<ArrayList<Message>> onReceiveCallback;
+    private ArrayList<Message> messages = new ArrayList();
     private ChatServerConnection connection;
     private ChatViewController controller;
 
-    public MessagesStatus(ChatServerConnection conn, ChatViewController control) {
+    public MessagesStatus(Consumer<ArrayList<Message>> onReceiveCallback, ChatServerConnection conn, ChatViewController control) {
+        this.onReceiveCallback = onReceiveCallback;
         connection = conn;
         controller = control;
+        listen();
     }
 
-    private void getMessages() {
-        messages.clear();
-        try {
-            ObjectOutputStream out = connection.getOutStream();
-            out.writeObject(new UpdateOperation());
-            ObjectInputStream in = connection.getInStream();
-                try {
-                    MessageCollection msgs = (MessageCollection) in.readObject();
-                    MessageCollectionIterator it = (MessageCollectionIterator) msgs.createIterator();
-                    while (it.hasNext()) {
-                        messages.add((Message) it.next());
+    private void listen() {
+            Thread thread = new Thread(() -> {
+                ArrayList<Message> list;
+                while (true) {
+                    try {
+                        list = (ArrayList<Message>) connection.getInStream().readObject();
+                        messages = list;
+                        onReceiveCallback.accept(messages);
+                    } catch (Exception e) {
+                        connection.close();
                     }
-                } catch (ClassNotFoundException e) {
-                    System.err.println("Getting message collection from server failure.");
-                    e.printStackTrace();
                 }
-        }
-        catch (IOException e) {
-            System.err.println("Creating stream for getting messages failure.");
-            e.printStackTrace();
-        }
-
-    }
-
-    public MessageCollection getMessageList() {
-        getMessages();
-        return this.messages;
+            });
+            thread.start();
     }
 
 }

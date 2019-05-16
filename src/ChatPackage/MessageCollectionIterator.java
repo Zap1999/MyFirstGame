@@ -1,3 +1,4 @@
+/*
 package ChatPackage;
 
 import EnemyPackage.Iterator;
@@ -32,3 +33,4 @@ public class MessageCollectionIterator implements Iterator, Serializable {
     }
 
 }
+*/

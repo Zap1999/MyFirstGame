@@ -27,6 +27,8 @@
             <Button mnemonicParsing="false" onAction="#logIn" prefHeight="71.0" prefWidth="609.0" text="Log In" />
             <Label />
             <Button mnemonicParsing="false" onAction="#gotoRegister" prefHeight="71.0" prefWidth="614.0" text="Register" />
+            <Label />
+            <Button mnemonicParsing="false" onAction="#test" prefHeight="71.0" prefWidth="600.0" text="Testing" />
          </children>
       </VBox>
    </center>

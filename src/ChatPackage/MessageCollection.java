@@ -1,3 +1,4 @@
+/*
 package ChatPackage;
 
 import EnemyPackage.Collection;
@@ -47,3 +48,4 @@ public class MessageCollection implements Collection, Serializable {
     }
 
 }
+*/

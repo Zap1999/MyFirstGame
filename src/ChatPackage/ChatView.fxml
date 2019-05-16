@@ -38,15 +38,6 @@
                   <Font size="37.0" />
                </font>
             </Label>
-            <Button fx:id="refresh" onAction="#refresh" mnemonicParsing="false" prefHeight="26.0" prefWidth="65.0">
-               <graphic>
-                  <ImageView fitHeight="21.0" fitWidth="26.0">
-                     <image>
-                        <Image url="@../img/refresh.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
          </children>
       </VBox>
    </top>

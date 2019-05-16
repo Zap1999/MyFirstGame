@@ -1,9 +1,11 @@
 package ChatPackage;
 
+import java.util.ArrayList;
+
 // Command interface
 public interface MessageOperation {
 
-    MessageCollection execute(MessageCollection e);
+    ArrayList execute(ArrayList e);
     OpType getType();
 
 }
