@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="600.0" style="-fx-background-color: #263238;" stylesheets="@../DarkTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myhero.MyHeroController">
+   <top>
+      <Label alignment="CENTER" prefHeight="46.0" prefWidth="600.0" text="My Hero" textFill="#d5d0d0" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+   </top>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#back" prefHeight="0.0" prefWidth="600.0" stylesheets="@../DarkTheme.css" text="Back to menu" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+   </bottom>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="heroView" fitHeight="400.0" fitWidth="300.0">
+               <image>
+                  <Image url="@../img/nude_null.jpg" />
+               </image>
+            </ImageView>
+            <Label text="Your Attack:">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="attack">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Label>
+            <Label text="Your HP:">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="hp">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Label>
+            <Label text="Your money:">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="money" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
