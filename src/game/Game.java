@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 public class Game implements Serializable {
 
+    private int port = -1;
     private String name = "admin";
     private Hero hero;
     private DollarCurrency money;
@@ -41,5 +42,13 @@ public class Game implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
     }
 }

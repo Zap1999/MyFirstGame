@@ -1,5 +1,6 @@
 package chat;
 
+import game.Context;
 import game.ContextOriginator;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -17,7 +18,7 @@ import java.io.IOException;
 
 
 public class ChatViewController {
-    private static int PORT = 7777;
+    private static int PORT;
     private ChatServerConnection connection;
 
     private Stage stage;
@@ -31,8 +32,16 @@ public class ChatViewController {
     @FXML
     public void initialize() {
 
+        int port = ContextOriginator.getCurrentState().getPort();
+        if (port > 0) {
+            PORT = port;
+        }
+        else {
+            PORT = 7777;
+        }
         makeConnection("localhost", PORT);
         PORT++;
+        ContextOriginator.getCurrentState().setPort(PORT);
         new MessagesStatus(
                 data->{
                     Platform.runLater(() -> {
